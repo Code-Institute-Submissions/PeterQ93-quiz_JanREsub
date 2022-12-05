@@ -33,5 +33,20 @@ let questions = [
         choice4: "alert('Hello World');",
         answer: 4,
     },
-]
+];
+
+const CORRECT_BONUS = 10;
+const MAX_QUESTIONS = 3;
+
+/**
+ * Starts New Game
+ */
+function startGame = () => {
+    questionCounter = 0;
+    score = 0;
+    availableQuestions = [...questions];
+    getNewQuestion();
+};
+
+
 
