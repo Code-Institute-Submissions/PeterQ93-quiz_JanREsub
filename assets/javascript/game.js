@@ -56,8 +56,9 @@ function startGame()  {
  */
 function getNewQuestion() {
     if (availableQuestions.length == 0 || questionCounter > MAX_QUESTIONS) {
+        localStorage.setItem('mostRecentScore', score);
         //go to the endgame page
-        return window.location.assign('./endgame.html')
+        return window.location.assign('./endgame.html');
     }
    
     questionCounter++;
