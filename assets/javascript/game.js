@@ -56,8 +56,8 @@ function startGame()  {
  */
 function getNewQuestion() {
     if (availableQuestions.length == 0 || questionCounter > MAX_QUESTIONS) {
-        //go to the end page
-        return window.location.assign('/end.html')
+        //go to the endgame page
+        return window.location.assign('./endgame.html')
     }
    
     questionCounter++;
@@ -96,9 +96,9 @@ choices.forEach(choice => {
         selectedChoice.parentElement.classList.add(classToApply);
 
         setTimeout(() => {
-        selectedChoice.parentElement.classList.remove(classToApply);
-        getNewQuestion();
-        }, 1000);
+            selectedChoice.parentElement.classList.remove(classToApply);
+            getNewQuestion();
+          }, 1000);
     });
 });
 
