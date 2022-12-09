@@ -12,9 +12,9 @@ let availableQuestions = [];
 
 let questions = [];
 
-
+/**Fetches Questions from an api */
 fetch(
-    'https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple'
+    'https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple'
 )
     .then((res) => {
         return res.json();
@@ -22,11 +22,11 @@ fetch(
     .then((loadedQuestions) => {
         questions = loadedQuestions.results.map((loadedQuestion) => {
             const formattedQuestion = {
-                question: loadedQuestion.question,
+                question: loadedQuestion.question
             };
 
             const answerChoices = [...loadedQuestion.incorrect_answers];
-            formattedQuestion.answer = Math.floor(Math.random() * 4) + 1;
+            formattedQuestion.answer = Math.floor(Math.random() * 3) + 1;
             answerChoices.splice(
                 formattedQuestion.answer - 1,
                 0,
@@ -47,7 +47,7 @@ fetch(
     });
 
 const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 3;
+const MAX_QUESTIONS = 10;
 
 /**
  * Starts New Game
@@ -111,10 +111,10 @@ choices.forEach(choice => {
     });
 });
 
+/**Increments Players Score */
 function incrementScore (num) {
     score += num;
     scoreText.innerText = score;
 
 }
 
-startGame();

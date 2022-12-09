@@ -69,6 +69,14 @@ h2 {
     display: none;
 }
 
+.fa-desktop {
+    font-size: 3rem;
+}
+
+.fa-users {
+    font-size: 3rem;
+}
+
 /* BUTTONS */
 .btn {
     font-size: 2.4rem;
