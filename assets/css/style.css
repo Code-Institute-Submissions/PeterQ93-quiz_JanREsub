@@ -35,8 +35,11 @@ h2 {
     margin-bottom: 1rem;
 }
 
+#h-position {
+    padding-bottom: 5rem;
+}
 
-/*div position*/
+/*div position index.html*/
 .container {
     width: 80vh;
     height: 80vh;
@@ -76,6 +79,18 @@ h2 {
 }
 
 .fa-users {
+    font-size: 3rem;
+}
+
+.fa-play {
+    font-size: 3rem;
+}
+
+.fa-floppy-disk {
+    font-size: 3rem;
+}
+
+.fa-house {
     font-size: 3rem;
 }
 
@@ -121,6 +136,99 @@ input {
     border: none;
 }
 
+/*Styling for my 4 choices*/
+.choice-container {
+    display: flex;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    font-size: 2.5rem;
+    border: 0.1rem solid rgb(36, 36, 36);
+    background-color: white;
+}
+
+.choice-container:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 #fff;
+    transition: transform 150ms;
+    transform: scale(1.03);
+}
+
+.choice-prefix {
+    padding: 1.5rem 2.5rem;
+    background-color: rgb(36, 36, 36);
+    color: white;
+}
+
+.choice-text {
+    padding: 1.5rem;
+    width: 100%;
+}
+
+/*HUD*/
+
+#hud {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hud-prefix {
+    text-align: center;
+    font-size: 2rem;
+    color: rgb(255, 255, 0) ;
+}
+
+.hud-main-text {
+    text-align: center;
+}
+
+#progressBar {
+    width: 20rem;
+    height: 4rem;
+    border: 0.3rem solid rgb(255, 255, 0);
+    margin-top: 1.5rem;
+}
+
+#progressBarFull {
+    height: 3.4rem;
+    background-color: rgb(255, 255, 0) ;
+    width: 0%;
+}
+
+/*Loader*/
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  /*Highscore styling*/
+#highScoresList {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 4rem;
+
+}
+
+.high-score {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    color: rgb(255, 255, 0);
+
+}
+
+.high-score:hover {
+    transform: scale(1.025);
+}
+
+/*Media Queries*/
 @media screen and (max-width: 730px)  {
     #h-position {
         padding-left: 12rem;
@@ -139,11 +247,25 @@ input {
 
     h1 {
         font-size: 6rem;
-        padding-left: 1rem;
     }
 
     .head-align {
         width: 80vh;
+    }
+
+    .btn {
+        font-size: 4rem;
+        padding: 2rem 0;
+        width: 40rem;
+        text-align: center;
+    }
+
+    input {
+        width: 40rem;
+    }
+
+    .choice-container {
+        font-size: 3.6rem;
     }
 
 }

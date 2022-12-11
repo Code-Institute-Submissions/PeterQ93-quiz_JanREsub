@@ -72,7 +72,7 @@ function startGame()  {
  * Checks remaining questions and gets new question
  */
 function getNewQuestion() {
-    if (availableQuestions.length == 0 || questionCounter > maxQuestions) {
+    if (availableQuestions.length === 0 || questionCounter > maxQuestions) {
         localStorage.setItem('mostRecentScore', score);
         //go to the endgame page
         return window.location.assign('./endgame.html');
@@ -129,7 +129,7 @@ function showAlert(correct) {
     swal({
         position: 'center',
         icon: correct ? 'success' : 'error',
-        title: correct ? 'You are Right!' : 'Sorry Not the right answer',
+        title: correct ? 'You are Right!' : 'Sorry NOT the right answer',
         showConfirmButton: false,
         timer: 1500
     })
