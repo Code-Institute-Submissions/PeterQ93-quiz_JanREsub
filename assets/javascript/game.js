@@ -130,7 +130,6 @@ function showAlert(correct) {
         position: 'center',
         icon: correct ? 'success' : 'error',
         title: correct ? 'You are Right!' : 'Sorry NOT the right answer',
-        showConfirmButton: false,
         timer: 1500
     })
 }
