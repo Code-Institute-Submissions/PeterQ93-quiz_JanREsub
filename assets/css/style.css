@@ -26,6 +26,7 @@ h1 {
     font-size: 5.4rem;
     color: rgb(255, 255, 0);
     margin-bottom: 1rem;
+    
 }
 
 h2 {
@@ -34,7 +35,8 @@ h2 {
     margin-bottom: 1rem;
 }
 
-/*CLASSES*/
+
+/*div position*/
 .container {
     width: 80vh;
     height: 80vh;
@@ -68,7 +70,7 @@ h2 {
 .hidden {
     display: none;
 }
-
+/*Font Awesome Icons*/
 .fa-desktop {
     font-size: 3rem;
 }
@@ -117,5 +119,31 @@ input {
     padding: 1.5rem;
     font-size: 1.8rem;
     border: none;
+}
+
+@media screen and (max-width: 730px)  {
+    #h-position {
+        padding-left: 12rem;
+    }
+    
+}
+
+@media screen and (max-width: 555px) {
+    .head-align {
+        padding-left: 14rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    
+
+    h1 {
+        font-size: 6rem;
+        padding-left: 1rem;
+    }
+
+    .head-align {
+        width: 80vh;
+    }
 
 }
