@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 
-/*Styling for the body*/
+/* Styling for the body */
 :root {
     background-color:  rgb(112,66,20);
 }
@@ -13,20 +13,19 @@
     font-family: 'Inconsolata', cursive;
 }
 
-/*Styling for the head*/
+/* Styling for the head */
+
 .head-align {
-    display: flex;
-    justify-content: center;
-    padding-top: 3rem;
     margin: 0 auto;
     background-color: rgb(32, 32, 32);
 	text-align: center;
-    width: 50rem;
+    width: fit-content;
     height: 14rem;
+    padding-top: 3rem;
 }
 
+/* Styling for my heading s*/
 
-/*Styling for my headings*/
 h1 {
     font-size: 5.4rem;
     color: #f3f3f3;
@@ -45,73 +44,62 @@ h2 {
     
 }
 
-/*div position index, endgame and game.html*/
+/* div position index, endgame and game.html */
+
 .container {
-    width: 100vh;
-    height: 60vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 90rem;
-    margin: 0 auto;
-    padding: 2rem;
+    display: block;
+    width: 100%;
 }
+
+.row {
+    display: flex;
+    flex-wrap: wrap
+}
+
+.col-full {
+    width: 100%;
+}
+
+.game-area {
+    width: 50%;
+    margin: auto;
+}
+
+.flex-center {
+    margin: auto;
+    width: 50%;
+    align-items: center;
+}
+
+.div-space {
+    margin-top: 6rem;
+}
+
 
 .flex-column {
     display: flex;
     flex-direction: column;
 }
 
-.flex-center {
-    justify-content: center;
-    align-items: center;
-}
-
-
-.justify-center {
-    justify-content: center;
-}
-
-.text-center {
-    text-align: center;
-}
-
 .hidden {
     display: none;
 }
 /*Font Awesome Icons*/
-.fa-desktop {
-    font-size: 3rem;
-}
 
-.fa-users {
-    font-size: 3rem;
-}
-
-.fa-play {
-    font-size: 3rem;
-}
-
-.fa-floppy-disk {
-    font-size: 3rem;
-}
-
-.fa-house {
-    font-size: 3rem;
-}
-
-.fa-facebook {
-    font-size: 3rem;
-}
-
-.fa-twitter {
-    font-size: 3rem;
-}
-
+.fa-desktop,
+.fa-users,
+.fa-play,
+.fa-floppy-disk,
+.fa-house,
+.fa-facebook,
+.fa-twitter,
 .fa-instagram {
     font-size: 3rem;
 }
+
+
 /* BUTTONS */
+
 .btn {
     font-size: 2.4rem;
     padding: 2rem 0;
@@ -138,6 +126,7 @@ h2 {
 }
 
 /*Forms*/
+
 form {
     width: 100%;
     display: flex;
@@ -154,6 +143,7 @@ input {
 }
 
 /*Styling for my 4 choices*/
+
 .choice-container {
     display: flex;
     margin-bottom: 0.5rem;
@@ -179,6 +169,10 @@ input {
 .choice-text {
     padding: 1.5rem;
     width: 100%;
+}
+
+#question {
+    font-size: 3.2rem;
 }
 
 /*HUD*/
@@ -212,27 +206,30 @@ input {
 }
 
 /*Loader from W3 Schools lesson*/
+
 #loader {
-    border: 16px solid #f3f3f3; 
-    border-top: 16px solid  rgb(32, 32, 32);
+    border: 1rem solid #f3f3f3; 
+    border-top: 1rem solid  rgb(32, 32, 32);
     border-radius: 50%;
     width: 15rem;
     height: 15rem;
     animation: spin 2s linear infinite;
-   
+    margin: 5rem auto;
   }
 
 .loader {
     display: flex;
     justify-content: center;
 }    
+
   
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
 
-  /*Highscore styling*/
+/*Highscore styling*/
+
 #highScoresList {
     list-style: none;
     padding-left: 0;
@@ -256,163 +253,31 @@ input {
 footer {
     background-color: rgb(32, 32, 32);
     width: 100%;
-    align-items: center;
-	padding: 2rem;
+	padding: 1.5rem;
 	text-align: center;
-    height: 9rem;
-    bottom: 0;
-    right: 0;
-    position: fixed;
-	z-index: 3;
-    
+    height: 13rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+   
 }
-
 
 footer > a {
 	color: #f3f3f3;
 	text-decoration: none;
-	padding: 0 15px;
-	font-size: 3rem;
-    
-    
+	padding: 0 1rem;
+	font-size: 3rem; 
 }
-
-
-
 
 /*Media Queries*/
 
-@media screen and (max-width: 880px) {
-    .head-align {
-        margin-left: 20rem;
-    }
-}
-
-@media screen and (max-width: 730px)  {
-
-    #progressText {
-        margin-right: 1.5rem;
-    }
-
-    .choice-container {
-        font-size: 7.5rem;
-    }
-
-    .hud-prefix {
-        font-size: 7rem;
-    }
-
-    .head-align {
-        margin-left: 20rem;
-    }
-
-    .container {
-        padding-top: 20rem;
-    }
-   
-   footer {
-        height: 20rem;
-        padding: 3rem;
-   }
-
-   footer > a {
-        font-size: 6rem
-   }
-
-    .btn {
-        font-size: 6rem;
-        padding: 2rem 0;
-        width: 50rem;
-        text-align: center;
-    }
-    
-    input {
-        width: 50rem;
-    }
-
-    .fa-twitter {
-        font-size: 5rem;
-    }
-
-    .fa-facebook {
-        font-size: 5rem;
-    }
-
-    .fa-instagram {
-        font-size: 5rem;
-    }
-
-    
-    .fa-play {
-    font-size: 5rem;
-    }
-
-    .fa-floppy-disk {
-    font-size: 5rem;
-    }
-
-    .fa-house {
-    font-size: 5rem;
-    }
-}
-
 @media screen and (max-width: 555px) {
-   
-    .container {
-        padding-top: 55rem;
+    .flex-center {
+        width: 75%;
     }
-
-    .choice-container {
-        font-size: 9.5rem;
-    }
-
-    .hud-prefix {
-        font-size: 9rem;
-    }
-
-}
-
-@media screen and (max-width: 450px) {
 
     .head-align {
-        height: 20rem;
+        width: fit-content;
     }
 
-    .container {
-        padding-top: 70rem;
-    }
-    
-
-    h1 {
-        font-size: 6rem;
-    }
-
-    .btn {
-        font-size: 10rem;
-        padding: 2rem 0;
-        width: 80rem;
-        
-    }
-    
-    input {
-        width: 80rem;
-    }
-
-    .choice-container {
-        font-size: 12.5rem;
-    }
-
-    .hud-prefix {
-        font-size: 9rem;
-    }
-
-    .high-score {
-        font-size: 9rem;
-    }
-
-    #finalScore {
-        font-size: 9rem;
-    }
-
-   
 }

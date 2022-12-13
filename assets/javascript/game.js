@@ -17,12 +17,15 @@ let availableQuestions = [];
 let questions = [];
 
 /**Adds and hides loader */
+
 function hideLoader() {
     loader.classList.add('hide')
     gameArea.classList.remove('hide')
 }
 
 /**Fetches Questions from an api */
+
+function fetchQuestions () {
     fetch(
         'https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple'
     )
@@ -55,12 +58,14 @@ function hideLoader() {
         .catch((err) => {
             console.error(err);
         });
+    }
     
 
 
 /**
  * Starts New Game
  */
+
 function startGame()  {
     questionCounter = 0;
     score = 0;
@@ -71,6 +76,7 @@ function startGame()  {
 /**
  * Checks remaining questions and gets new question
  */
+
 function getNewQuestion() {
     if (availableQuestions.length === 0 || questionCounter > maxQuestions) {
         localStorage.setItem('mostRecentScore', score);
@@ -98,15 +104,13 @@ function getNewQuestion() {
 
 choices.forEach(choice => {
     choice.addEventListener('click', e => {
-        if (!acceptingAnswers) return;
-
-        acceptingAnswers = false;
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset['choice'];
+        
+        if (!acceptingAnswers) return;
+        acceptingAnswers = false;
 
         const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
-
-        console.log(selectedAnswer, currentQuestion.answer)
 
         if (classToApply === 'correct') {
             incrementScore(correctBonus);
@@ -125,6 +129,7 @@ choices.forEach(choice => {
 });
 
 /**Sweet alert for correct and incorrect answers*/
+
 function showAlert(correct) {
     swal({
         position: 'center',
@@ -135,6 +140,7 @@ function showAlert(correct) {
 }
 
 /**Increments Players Score*/
+
 function incrementScore (num) {
     score += num;
     scoreText.innerText = score;

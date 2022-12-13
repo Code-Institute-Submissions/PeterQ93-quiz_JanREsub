@@ -16,7 +16,7 @@ function saveHighScore(event) {
     event.preventDefault();
 
     const score = {
-        score: mostRecentScore.innerHTML,
+        score: mostRecentScore,
         name: username.value,
     }
     highScores.push(score);

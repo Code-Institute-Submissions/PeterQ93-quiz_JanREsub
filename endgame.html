@@ -9,13 +9,25 @@
     <title>Congrats!</title>
 </head>
 <body>
-     <!--Header Section-->
-     <header class="head-align">
-        <h1>Computer Knowledge</h1>
-    </header>
+    <!--Header Section-->
+   
     <div class="container">
-        <div id="end" class="flex-center flex-column">
-            <h1 id="finalScore"></h1>
+        <div class="row">
+            <div class="col-full">
+
+                <header class="head-align">
+                    <h1>Computer Knowledge</h1>
+                </header>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-full flex-center flex-column div-space">
+         
+            <h2 id="finalScore">0</h2>
             <form>
                 <input type="text" name="username" id="username" placeholder="username">
                 <button 
@@ -24,9 +36,32 @@
             </form>
             <a href="/game.html" class="btn">Play Again <i class="fa-solid fa-play"></i></a>
             <a href="/index.html" class="btn">Homepage <i class="fa-solid fa-house"></i></a>
+       
+            </div>
         </div>
     </div>
-    <script src="/assets/javascript/endgame.js"></script>
+       
+ <!--Footer with social media links-->
+
+     <div class="container">
+        <div class="row">
+            <div class="col-full flex-center div-space">
+
+                <footer>
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener" 
+                    aria-label="Find us on Facebook (link opens in a new tab)">Facebook <i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener" 
+                    aria-label="Find us on Instagram (link opens in a new tab)">Instagram <i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.twitter.com" target="_blank" rel="noopener" 
+                    aria-label="Find us on Twitter (link opens in a new tab)">Twitter <i class="fa-brands fa-twitter"></i></a>
+                </footer>
+          
+            </div>
+        </div>
+    </div>
+
     <script src="https://kit.fontawesome.com/7e006ab397.js" crossorigin="anonymous"></script>
+    <script src="/assets/javascript/endgame.js"></script>
+    
 </body>
 </html>
