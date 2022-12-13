@@ -1,5 +1,6 @@
 # **Computer Knowledge**
- 
+
+Computer Knowledge is website which offers a quiz to test your computer knowledge. The site is targeted towards anyone who wants to test there computer knowledge. The quiz pulls random questions from an api (https://opentdb.com/).
 
 
 
@@ -24,10 +25,10 @@
 1. [**Credits**](#credits)
    
 ## **Planning stage**
-
-
 ### **Target Audiences**
-​Looking to target 
+ - ​Looking to target kids and adults of all ages to test there computer knowledge.
+ - someone wanting a quiz time waster with little to invest
+ - Quiz enthusiast
 
 ### **User Stories** 
 
