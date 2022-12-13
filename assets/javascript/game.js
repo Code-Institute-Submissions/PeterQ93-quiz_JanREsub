@@ -124,7 +124,7 @@ choices.forEach(choice => {
     });
 });
 
-
+/**Sweet alert for correct and incorrect answers*/
 function showAlert(correct) {
     swal({
         position: 'center',
@@ -134,7 +134,7 @@ function showAlert(correct) {
     })
 }
 
-/**Increments Players Score */
+/**Increments Players Score*/
 function incrementScore (num) {
     score += num;
     scoreText.innerText = score;
