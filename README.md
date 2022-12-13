@@ -93,27 +93,29 @@ In the making of this website i used  font style i taught complimented each othe
 
 ​
 ## **Testing Phase**
-- I tested all 3 html documents using the W3C validator
-  - Index.html
+- I tested all 4 html documents using the W3C validator
+- Index.html
   
 
-![Homepage Test](assets/images/homepage-test.png)
+![Homepage Test](assets/images/index-validate.png)
 
   - Endgame.html
 
-![Endgame Test](assets/images/contact-test.png)
+![Endgame Test](assets/images/endgame-validate.png)
 
   - Game.html
 
-​![Game Test](assets/images/classes-test.png)
+​![Game Test](assets/images/game-validate.png)
 
   - Highscores.html
+  - There is one warning of an empty heading here but it is empty as the information is added in javascript.
+    
 
-​![Highscores Test](assets/images/classes-test.png)
+​![Highscores Test](assets/images/highscores-validate.png)
 
   - CSS
 
-​![CSS Test](assets/images/css-validated.png)
+​![CSS Test](assets/images/css-validate.png)
 
 
 ​
