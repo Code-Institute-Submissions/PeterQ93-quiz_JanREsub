@@ -25,6 +25,7 @@ Computer Knowledge is website which offers a quiz to test your computer knowledg
    
 ## **Planning stage**
 ### **Target Audiences**
+
  - ​Looking to target kids and adults of all ages to test there computer knowledge.
  - someone wanting a quiz time waster with little to invest
  - Quiz enthusiast
@@ -107,6 +108,7 @@ All colours have been implemented to compliment each other and be aesthetically 
 - Above the questions it tells you which question your on out of 10 and as you progress through the questions there is a loader bar to let you know how far you have gone.
 - To the right of the question your on is the score the user has.
 - The user will get 10 points for every question they get right.
+- Everytime you select a question you will get a sweet alert which will tell you if you got the question right or wrong.
 
 ## **Highscores**
 
@@ -144,9 +146,32 @@ All colours have been implemented to compliment each other and be aesthetically 
 ​
 ## **Bugs**
 
-Footer 
+Questions
 
-Validator 
+ - Sometimes the api would generate a question and there would be still some html code in the question.
+ - To fix this i realised i had .innerText in the javascript so i changed it to .innerHTML and that fixed the bug.
+
+Loader 
+
+ - When i put the loader into the site it would load but would not go away.
+ - To fix this i realised i had my id in the wrong place and i had my add and hide loader in a seperate function so i moved them to start game function and it fixed this.
+
+Highscore
+
+ - Once i saved the users highscores it would return undefined.
+ - To fix this i seen in the endgame.js i had score.innerHTML and once i removed innerHTML it returned the correct score.
+
+Sweet Alert
+
+ - I tried to add a sweet alert i found on google and once i put the code into javascript and css it would not show up.
+ - To fix this i found another one which you put a script tag into your html file and it fixed this.
+
+Responsiveness 
+
+ - Whenever i viewed the site in dev tools the responsiveness was not right as it got smaller.
+ - To fix this i inserted most my content on each html page into 3 divs all with the same css code to keep it all in line.
+
+
 
 
 ​
@@ -166,8 +191,22 @@ You can find the live site via the following URL - [Computer Knowledge](https://
 ​
 ## **Credits**
 
+Loader 
+ - I picked the loader from a w3 schools page (https://www.w3schools.com/howto/howto_css_loader.asp).
 
-Footer
+Javascript 
+- I looked at two courses on youtube for ideas about how to go about building the quiz with javascript.
+- James Q Quick
+(https://www.youtube.com/watch?v=u98ROZjBWy8&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx)
+- Brian Design
+(https://www.youtube.com/watch?v=f4fB9Xg2JEY&t=2745s)
+
+Sweet Alert
+- I found a good sweet alert on stack overflow in one of the comments.
+(https://stackoverflow.com/questions/51579801/how-to-show-sweetalert-in-javascript).
+
+
+
 
 
 
