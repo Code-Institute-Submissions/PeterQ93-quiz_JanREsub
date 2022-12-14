@@ -22,6 +22,7 @@
     width: fit-content;
     height: 14rem;
     padding-top: 3rem;
+    border-radius: 1rem;
 }
 
 /* Styling for my heading s*/
@@ -81,9 +82,6 @@ h2 {
     flex-direction: column;
 }
 
-.hidden {
-    display: none;
-}
 /*Font Awesome Icons*/
 
 .fa-desktop,
@@ -109,7 +107,7 @@ h2 {
     text-decoration: none;
     color: #f3f3f3;
     background: linear-gradient(90deg,  rgb(32, 32, 32) 0%,rgb(32, 32, 32)  100%);
-    border-radius: 4px; 
+    border-radius: 1rem; 
 }
 
 .btn:hover {
@@ -222,8 +220,11 @@ input {
     justify-content: center;
 }    
 
+.hide {
+    display: none;
+}
   
-  @keyframes spin {
+@keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
@@ -259,6 +260,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    border-radius: 1rem;
    
 }
 

@@ -109,7 +109,6 @@ In the making of this website i used  font style i taught complimented each othe
 ​![Game Test](assets/images/game-validate.png)
 
   - Highscores.html
-  - There is one warning of an empty heading here but it is empty as the information is added in javascript.
     
 
 ​![Highscores Test](assets/images/highscores-validate.png)

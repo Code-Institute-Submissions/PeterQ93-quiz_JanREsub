@@ -1,5 +1,5 @@
 const question = document.getElementById('question');
-const choices = Array.from(document.getElementsByClassName('choice-text'));
+const choices = document.getElementsByClassName('choice-text');
 const progressText = document.getElementById('progressText');
 const scoreText = document.getElementById('score');
 const progressBarFull = document.getElementById('progressBarFull');
@@ -9,23 +9,16 @@ const correctBonus = 10;
 const maxQuestions = 10;
 
 let currentQuestion = {};
-let acceptingAnswers = false;
+let canPlay = false;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 
 let questions = [];
 
-/**Adds and hides loader */
-
-function hideLoader() {
-    loader.classList.add('hide')
-    gameArea.classList.remove('hide')
-}
 
 /**Fetches Questions from an api */
 
-function fetchQuestions () {
     fetch(
         'https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple'
     )
@@ -58,7 +51,7 @@ function fetchQuestions () {
         .catch((err) => {
             console.error(err);
         });
-    }
+
     
 
 
@@ -71,6 +64,11 @@ function startGame()  {
     score = 0;
     availableQuestions = [...questions];
     getNewQuestion();
+
+    /**Adds and hides loader */
+
+    loader.classList.add('hide')
+    gameArea.classList.remove('hide')
 };
 
 /**
@@ -78,6 +76,7 @@ function startGame()  {
  */
 
 function getNewQuestion() {
+
     if (availableQuestions.length === 0 || questionCounter > maxQuestions) {
         localStorage.setItem('mostRecentScore', score);
         //go to the endgame page
@@ -85,33 +84,36 @@ function getNewQuestion() {
     }
    
     questionCounter++;
-    progressText.innerText = `Question ${questionCounter}/${maxQuestions}`;
+    progressText.innerHTML = `Question ${questionCounter}/${maxQuestions}`;
     //Update progress bar
     progressBarFull.style.width = `${(questionCounter / maxQuestions) * 100}%`;
 
     let questionIndex = Math.floor(Math.random()* availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
-    question.innerText = currentQuestion.question;
+    question.innerHTML = currentQuestion.question;
 
-    choices.forEach(choice => {
+    for(let choice of choices) {
+
         const number = choice.dataset['choice'];
         choice.innerText = currentQuestion['choice' + number];
-    })
+    }
 
     availableQuestions.splice(questionIndex, 1);
-    acceptingAnswers = true;
+    canPlay = true;
 };
 
-choices.forEach(choice => {
+for (let choice of choices) {
+
     choice.addEventListener('click', e => {
+
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset['choice'];
-        
-        if (!acceptingAnswers) return;
-        acceptingAnswers = false;
-
         const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
+        if (!canPlay) return;
+
+        canPlay = false;
+       
         if (classToApply === 'correct') {
             incrementScore(correctBonus);
             showAlert(true)
@@ -122,26 +124,29 @@ choices.forEach(choice => {
         selectedChoice.parentElement.classList.add(classToApply);
 
         setTimeout(() => {
+
             selectedChoice.parentElement.classList.remove(classToApply);
             getNewQuestion();
           }, 1000);
     });
-});
+};
 
 /**Sweet alert for correct and incorrect answers*/
 
 function showAlert(correct) {
     swal({
+
         position: 'center',
         icon: correct ? 'success' : 'error',
         title: correct ? 'You are Right!' : 'Sorry NOT the right answer',
-        timer: 1500
+        timer: 1000
     })
 }
 
 /**Increments Players Score*/
 
 function incrementScore (num) {
+
     score += num;
     scoreText.innerText = score;
 
