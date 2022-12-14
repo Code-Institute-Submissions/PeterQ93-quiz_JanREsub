@@ -13,10 +13,11 @@ Computer Knowledge is website which offers a quiz to test your computer knowledg
     * [***Wireframes***](#wireframes)
     * [***Color Scheme***](#color-scheme)
     * [***Typography***](#typography)
-1. [**Current Features Common to all pages**](#current-features-common-to-all-pages)
-    * [***Navigation Bar***](#navigation-bar)
-    * [***Features***](#features)
-    * [***Footer***](#footer)
+1. [**Features**](#features)
+    * [**Buttons**](#buttons)
+    * [**Footer**](#footer)
+    * [**Quiz Questions**](#quiz)
+    * [**Highscores**](#highscores)
 1. [**Testing Phase**](#testing-phase)
 1. [**Bugs**](#bugs)
 1. [**Deployment**](#deployment)
@@ -61,54 +62,59 @@ The color scheme implemented throughout the site is a mixture between:
 - #f3f3f3 for the letter on the choices.
 - rgb(32, 32, 32) for the background of the letter choice.
 
-All colours have been implemented to compliment each other and be aesthetically pleasing.
+All colours have been implemented to compliment each other and be aesthetically pleasing. I tried to keep to a theme of using #f3f3f3 and rgb(32, 32, 32).
  
 ## **Typography**
 
-In the making of this website i used  font style i taught complimented each other and the layout of the website.
+- I kept it simple and consistent with one text Inconsolata. Its applied throughout all my pages and is nice and easy to read.
 
-- 
-
-​
-
-​
-## **Current Features Common to all pages**
-- 
-- 
-​
-## **Navigation Bar**
-- Contains the title for the webpage with the link to homepage built in all on the left handside of the page
-- If you hover over either of the three pages on the right it will underline the one you are hovering on
-- Has 3 pages all on the right hand side of the page with built in links to each page
-
-​
 ## **Features**
-- Homepage 
+## **Buttons**
 
+![Homepage Buttons](assets/images/buttons-1.png)
 
-![Homepage Features](assets/images/homepage-features.png)
-
-- Game Page
+- 2 buttons on the index.html page one to start the game and the other to view the users top 5 highscores.
  
+![Endgame Buttons](assets/images/buttons-2.png)
 
-  ![Contact Features](assets/images/signup-features.png)
-
-- Endgame Page
+- Once you finish the quiz you have 3 buttons
+- First one you can save your name and score but to save the data you first have to enter your name or you cannot press the button.
+- Second will let you play the quiz again.
+- The third one will return you to the homepage.
   
    
-   ![Classes Features](assets/images/classes-features.png)
+![Highscores Button](assets/images/buttons-3.png)
 
-- Highscores
+- On the highscores page you have one button once the highscores are displayed which will bring you back to the homepage.
 
 
 ## **Footer**
-- The footer is a solid
-- It has the social media links for the website
-- They are centered in the middle of the screen with a text colour of 
 
- ![Nav Bar](assets/images/nav-bar.png)
+![Footer](assets/images/footer.png)
 
-​
+- The footer is located on 3 pages the highscores page, homepage and endgame page.
+- It has 3 social media links Facebook, Instagram, Twitter.
+- They are centered in the middle of the screen and aligned with flex with a flex direction of column.
+
+
+
+## **Quiz Questions**
+
+![Quiz Questions](assets/images/quiz-questions.png)
+
+- There are 4 choices in the quiz questions A, B, C and D.
+- The questions are put into the quiz using an api on (https://opentdb.com/).
+- Above the questions it tells you which question your on out of 10 and as you progress through the questions there is a loader bar to let you know how far you have gone.
+- To the right of the question your on is the score the user has.
+- The user will get 10 points for every question they get right.
+
+## **Highscores**
+
+![Highscores](assets/images/highscores.png)
+
+- The top 5 highscores are displayed on the highscores page.
+- They are stored in local storage.
+
 ## **Testing Phase**
 - I tested all 4 html documents using the W3C validator
 - Index.html
@@ -130,6 +136,7 @@ In the making of this website i used  font style i taught complimented each othe
 ​![Highscores Test](assets/images/highscores-validate.png)
 
   - CSS
+  - All the css is tested on the jigsaw website.
 
 ​![CSS Test](assets/images/css-validate.png)
 
