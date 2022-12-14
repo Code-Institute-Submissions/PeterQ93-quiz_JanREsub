@@ -142,8 +142,17 @@ All colours have been implemented to compliment each other and be aesthetically 
 
 ​![CSS Test](assets/images/css-validate.png)
 
+Testing functionality
 
-​
+ - I tested all the buttons worked correctly by pressing each one and making sure they returned the correct outcome.
+ - I tested the quiz itself by selecting each answer and making sure i was getting the correct outcome e.g the correct answer returned it correct and returned the sweet alert with adding 10 points for the correct answer.
+ - I also made sure once you selected the wrong answer that you got the correct sweet alert and no bonus was added for that.
+ - I also checked that by clicking the buttons numerous times that we still go the right outcome and the app did not break.
+ - I made sure that at the end of the game you could save the users score and that before they submit there score they had to enter a name.
+ - I also tested the highscores page to make sure what i was submitting was returning the correct data to local storage.
+ - I checked that all links open into a new tab and they brought me to the correct site.
+
+
 ## **Bugs**
 
 Questions
