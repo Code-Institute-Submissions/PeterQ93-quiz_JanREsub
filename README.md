@@ -2,9 +2,7 @@
 
 Computer Knowledge is website which offers a quiz to test your computer knowledge. The site is targeted towards anyone who wants to test there computer knowledge. The quiz pulls random questions from an api (https://opentdb.com/).
 
-
-
-![Website Screenshot](assets/images/hompage-screenshot.png)
+![Website Screenshot](assets/images/homepage-responsive.png)
 ​
 ## Table of contents:
 1. [**Site Overview**](#site-overview)
@@ -32,21 +30,39 @@ Computer Knowledge is website which offers a quiz to test your computer knowledg
 
 ### **User Stories** 
 
- - As a user i want 
- - As a user i want 
- - As a user i want classes available 
- - As a user i want
- - As a user i want 
+ - As a user i want the site to be easy to use with a colourful and welcoming interface.
+ - As a user i want to be challenged on my knowledge.
+ - As a user i want to be able to save my scores.
+ - As a user i want to see the top 5 scores.
+ 
 ​
 ​
 ### **Site Aims**
 
+1. Create a simple but engaging quiz game.
+2. Minimise continued maintenance with externally sourced quiz questions.
+3. Be engaging wnough to hold peoples attention. 
 
 ​
 ### **Color Scheme**
 
+The color scheme implemented throughout the site is a mixture between:
+
+- #f3f3f3 for h1 and h2.
+- #f3f3f3 for footer font colour.
+- rgb(32, 32, 32) for the heading background.
+- rgb(32, 32, 32) for footer background colour.
+- rgb(112,66,20) for the body.
+- #f3f3f3 for the text in the button.
+- rgb(32, 32, 32) for the background in the button.
+- #f3f3f3 for the hover on the button.
+- #f3f3f3 for the background in the choice container.
+- rgb(32, 32, 32) for the text in the choice container.
+- #f3f3f3 for the letter on the choices.
+- rgb(32, 32, 32) for the background of the letter choice.
+
+All colours have been implemented to compliment each other and be aesthetically pleasing.
  
-​
 ## **Typography**
 
 In the making of this website i used  font style i taught complimented each other and the layout of the website.

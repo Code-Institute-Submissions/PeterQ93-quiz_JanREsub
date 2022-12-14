@@ -147,21 +147,21 @@ input {
     margin-bottom: 0.5rem;
     width: 100%;
     font-size: 2.5rem;
-    border: 0.1rem solid rgb(36, 36, 36);
-    background-color: white;
+    border: 0.1rem solid rgb(32, 32, 32);
+    background-color: #f3f3f3;
 }
 
 .choice-container:hover {
     cursor: pointer;
-    box-shadow: 0 0.4rem 1.4rem 0 #fff;
+    box-shadow: 0 0.4rem 1.4rem 0 #f3f3f3;
     transition: transform 150ms;
     transform: scale(1.03);
 }
 
 .choice-prefix {
     padding: 1.5rem 2.5rem;
-    background-color: rgb(36, 36, 36);
-    color: white;
+    background-color: rgb(32, 32, 32);
+    color: #f3f3f3;
 }
 
 .choice-text {
