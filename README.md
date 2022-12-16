@@ -186,6 +186,7 @@ Responsiveness
 ​
 ***
 ## **Deployment**
+
 I deployed the page on GitHub pages via the following procedure: -
 ​
 1. From the project's [repository](pageurl), go to the **Settings** tab.
