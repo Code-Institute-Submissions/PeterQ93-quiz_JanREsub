@@ -30,5 +30,5 @@ function saveHighScore(event) {
         icon: 'info',
         title: 'Your score has been saved!',
         timer: 1000
-    }).then(() => window.location.assign('/'));
+    }).then(() => window.location.assign*('/quiz/index.html'));
 }
