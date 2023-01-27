@@ -54,7 +54,6 @@ let questions = [];
 
     
 
-
 /**
  * Starts New Game
  */
@@ -83,11 +82,6 @@ function getNewQuestion() {
         return window.location.assign('./endgame.html');
     }
    
-    questionCounter++;
-    progressText.innerHTML = `Question ${questionCounter}/${maxQuestions}`;
-    //Update progress bar
-    progressBarFull.style.width = `${(questionCounter / maxQuestions) * 100}%`;
-
     let questionIndex = Math.floor(Math.random()* availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
     question.innerHTML = currentQuestion.question;
@@ -155,4 +149,10 @@ function incrementScore (num) {
 function setDefaultValues() {
     questionCounter = 0;
     score = 0;
+}
+
+function incrementQuestionCounter() {
+    questionCounter++;
+    progressText.innerHTML = `Question ${questionCounter}/${maxQuestions}`;
+    progressBarFull.style.width = `${(questionCounter / maxQuestions) * 100}%`;
 }
