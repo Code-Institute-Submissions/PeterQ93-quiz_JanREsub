@@ -80,6 +80,7 @@ All colours have been implemented to compliment each other and be aesthetically 
 
 - Once you finish the quiz you have 3 buttons
 - First one you can save your name and score but to save the data you first have to enter your name or you cannot press the button.
+- Once saved you should get a sweet alert telling you your score has been saved.
 - Second will let you play the quiz again.
 - The third one will return you to the homepage.
   

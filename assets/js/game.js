@@ -32,7 +32,7 @@ function getData(){
                 question: loadedQuestion.question
             };
     
-            const answerChoices = loadedQuestion.incorrect_answers
+            const answerChoices = loadedQuestion.incorrect_answers;
 
             formattedQuestion.answer = Math.floor(Math.random() * 3) + 1;
             answerChoices.splice(
@@ -67,7 +67,7 @@ function startGame()  {
     setDefaultValues();
     getNewQuestion();
     displaySpinner();
-    gameArea.classList.remove('hide')
+    gameArea.classList.remove('hide');
 };
 
 /**
@@ -109,9 +109,9 @@ for (let choice of choices) {
        
         if (classToApply === 'correct') {
             incrementScore(correctBonus);
-            showAlert(true)
+            showAlert(true);
         } else {
-            showAlert(false)
+            showAlert(false);
         }
         
         selectedChoice.parentElement.classList.add(classToApply);
@@ -133,7 +133,7 @@ function showAlert(correct) {
         icon: correct ? 'success' : 'error',
         title: correct ? 'You are Right!' : 'Sorry NOT the right answer',
         timer: 1000
-    })
+    });
 }
 
 /**Increments Players Score*/
@@ -161,7 +161,7 @@ function incrementQuestionCounter() {
 /**Displays spinner */
 
 function displaySpinner() {
-    loader.classList.contains('hide') ? loader.classList.remove('hide') : loader.classList.add('hide')
+    loader.classList.contains('hide') ? loader.classList.remove('hide') : loader.classList.add('hide');
 }
 
 getData();
