@@ -25,7 +25,10 @@ function saveHighScore(event) {
     highScores.splice(5);
     
     localStorage.setItem('highScores', JSON.stringify(highScores));
-    window.location.assign('/');
-   
-
+    swal({
+        position: 'center',
+        icon: 'info',
+        title: 'Your score has been saved!',
+        timer: 1000
+    }).then(() => window.location.assign('/'));
 }
