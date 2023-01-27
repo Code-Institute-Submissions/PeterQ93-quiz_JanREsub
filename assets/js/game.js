@@ -60,9 +60,9 @@ let questions = [];
  */
 
 function startGame()  {
-    questionCounter = 0;
-    score = 0;
+    
     availableQuestions = [...questions];
+    setDefaultValues();
     getNewQuestion();
 
     /**Adds and hides loader */
@@ -152,3 +152,7 @@ function incrementScore (num) {
 
 }
 
+function setDefaultValues() {
+    questionCounter = 0;
+    score = 0;
+}
