@@ -63,10 +63,7 @@ function startGame()  {
     availableQuestions = [...questions];
     setDefaultValues();
     getNewQuestion();
-
-    /**Adds and hides loader */
-
-    loader.classList.add('hide')
+    displaySpinner();
     gameArea.classList.remove('hide')
 };
 
@@ -76,20 +73,20 @@ function startGame()  {
 
 function getNewQuestion() {
 
-    if (availableQuestions.length === 0 || questionCounter > maxQuestions) {
+    if (availableQuestions.length === 0) {
         localStorage.setItem('mostRecentScore', score);
-        //go to the endgame page
         return window.location.assign('./endgame.html');
     }
+
+    incrementQuestionCounter();
    
-    let questionIndex = Math.floor(Math.random()* availableQuestions.length);
+    let questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
     question.innerHTML = currentQuestion.question;
 
     for(let choice of choices) {
-
-        const number = choice.dataset['choice'];
-        choice.innerText = currentQuestion['choice' + number];
+        const number = choice.dataset.choice;
+        choice.innerHTML = currentQuestion['choice' + number];
     }
 
     availableQuestions.splice(questionIndex, 1);
@@ -98,10 +95,10 @@ function getNewQuestion() {
 
 for (let choice of choices) {
 
-    choice.addEventListener('click', e => {
+    choice.addEventListener('click', (e) => {
 
         const selectedChoice = e.target;
-        const selectedAnswer = selectedChoice.dataset['choice'];
+        const selectedAnswer = selectedChoice.dataset.choice;
         const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
         if (!canPlay) return;
@@ -156,3 +153,9 @@ function incrementQuestionCounter() {
     progressText.innerHTML = `Question ${questionCounter}/${maxQuestions}`;
     progressBarFull.style.width = `${(questionCounter / maxQuestions) * 100}%`;
 }
+
+function displaySpinner() {
+    loader.classList.contains('hide') ? loader.classList.remove('hide') : loader.classList.add('hide')
+}
+
+getData();
