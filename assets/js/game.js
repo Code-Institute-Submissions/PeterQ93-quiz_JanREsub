@@ -16,7 +16,7 @@ let availableQuestions = [];
 
 let questions = [];
 
-let gameUrl = 'https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple'
+let gameUrl = 'https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple';
 
 
 /**Fetches Questions from an api */
@@ -53,7 +53,7 @@ function getData(){
         .catch((err) => {
             console.error(err);
         });
-    }
+}
 
     
 
@@ -143,17 +143,22 @@ function incrementScore (num) {
     scoreText.innerText = score;
 
 }
+/**Sets default values for question count and score  */
 
 function setDefaultValues() {
     questionCounter = 0;
     score = 0;
 }
 
+/**Increments question count */
+
 function incrementQuestionCounter() {
     questionCounter++;
     progressText.innerHTML = `Question ${questionCounter}/${maxQuestions}`;
     progressBarFull.style.width = `${(questionCounter / maxQuestions) * 100}%`;
 }
+
+/**Displays spinner */
 
 function displaySpinner() {
     loader.classList.contains('hide') ? loader.classList.remove('hide') : loader.classList.add('hide')
