@@ -16,27 +16,29 @@ let availableQuestions = [];
 
 let questions = [];
 
+let gameUrl = 'https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple'
+
 
 /**Fetches Questions from an api */
 
-    fetch(
-        'https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple'
-    )
-        .then((res) => {
-            return res.json();
-        })
-        .then((loadedQuestions) => {
-            questions = loadedQuestions.results.map((loadedQuestion) => {
-                const formattedQuestion = {
-                    question: loadedQuestion.question
-                };
+function getData(){
+    fetch(gameUrl)
+    .then((response) => {
+            return response.json();
+    })
+    .then((loadedQuestions) => {
+        questions = loadedQuestions.results.map((loadedQuestion) => {
+            const formattedQuestion = {
+                question: loadedQuestion.question
+            };
     
-                const answerChoices = [...loadedQuestion.incorrect_answers];
-                formattedQuestion.answer = Math.floor(Math.random() * 3) + 1;
-                answerChoices.splice(
-                    formattedQuestion.answer - 1,
-                    0,
-                    loadedQuestion.correct_answer
+            const answerChoices = loadedQuestion.incorrect_answers
+
+            formattedQuestion.answer = Math.floor(Math.random() * 3) + 1;
+            answerChoices.splice(
+                formattedQuestion.answer - 1,
+                 0,
+                loadedQuestion.correct_answer
                 );
     
                 answerChoices.forEach((choice, index) => {
@@ -51,6 +53,7 @@ let questions = [];
         .catch((err) => {
             console.error(err);
         });
+    }
 
     
 
@@ -60,7 +63,7 @@ let questions = [];
 
 function startGame()  {
     
-    availableQuestions = [...questions];
+    availableQuestions = questions;
     setDefaultValues();
     getNewQuestion();
     displaySpinner();
@@ -75,7 +78,7 @@ function getNewQuestion() {
 
     if (availableQuestions.length === 0) {
         localStorage.setItem('mostRecentScore', score);
-        return window.location.assign('./endgame.html');
+        return window.location.assign('endgame.html');
     }
 
     incrementQuestionCounter();
@@ -84,7 +87,7 @@ function getNewQuestion() {
     currentQuestion = availableQuestions[questionIndex];
     question.innerHTML = currentQuestion.question;
 
-    for(let choice of choices) {
+    for (let choice of choices) {
         const number = choice.dataset.choice;
         choice.innerHTML = currentQuestion['choice' + number];
     }
@@ -94,7 +97,6 @@ function getNewQuestion() {
 };
 
 for (let choice of choices) {
-
     choice.addEventListener('click', (e) => {
 
         const selectedChoice = e.target;
@@ -137,7 +139,6 @@ function showAlert(correct) {
 /**Increments Players Score*/
 
 function incrementScore (num) {
-
     score += num;
     scoreText.innerText = score;
 
