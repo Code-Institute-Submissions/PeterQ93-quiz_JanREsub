@@ -11,7 +11,7 @@ username.addEventListener('keyup', function () {
     saveScoreBtn.disabled = !username.value;
 }); 
 /**Gets the users score and name and saves them to local storage */
-
+/**Function used from James Q Quick tutorial https://www.youtube.com/watch?v=u98ROZjBWy8&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx */
 function saveHighScore(event) {
    
     event.preventDefault();
@@ -19,7 +19,7 @@ function saveHighScore(event) {
     const score = {
         score: mostRecentScore,
         name: username.value,
-    }
+    };
     highScores.push(score);
     highScores.sort((a, b) => b.score - a.score);
     highScores.splice(5);

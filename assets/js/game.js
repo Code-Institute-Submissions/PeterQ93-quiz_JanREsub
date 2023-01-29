@@ -20,6 +20,7 @@ let gameUrl = 'https://opentdb.com/api.php?amount=10&category=18&difficulty=easy
 
 
 /**Fetches Questions from an api */
+/**Function used from James Q Quick tutorial https://www.youtube.com/watch?v=u98ROZjBWy8&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx */
 
 function getData(){
     fetch(gameUrl)
@@ -68,7 +69,7 @@ function startGame()  {
     getNewQuestion();
     displaySpinner();
     gameArea.classList.remove('hide');
-};
+}
 
 /**
  * Checks remaining questions and gets new question
@@ -94,7 +95,7 @@ function getNewQuestion() {
 
     availableQuestions.splice(questionIndex, 1);
     canPlay = true;
-};
+}
 
 for (let choice of choices) {
     choice.addEventListener('click', (e) => {
@@ -122,7 +123,7 @@ for (let choice of choices) {
             getNewQuestion();
           }, 1000);
     });
-};
+}
 
 /**Sweet alert for correct and incorrect answers*/
 
